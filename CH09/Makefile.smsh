@@ -1,0 +1,21 @@
+#
+# makefile for smsh
+#
+
+smsh1: smsh1.o splitline.o execute.o
+	cc -o smsh1 smsh1.o splitline.o execute.o
+
+smsh2: smsh2.o splitline.o execute.o process.o controlflow.o
+	cc -o smsh2 smsh2.o splitline.o execute.o process.o controlflow.o
+
+smsh3: smsh2.o splitline.o execute.o process2.o controlflow.o builtin.o \
+                varlib.o
+	cc -o smsh3 smsh2.o splitline.o execute.o process2.o controlflow.o \
+                builtin.o varlib.o
+
+smsh4: smsh4.o splitline.o execute2.o process2.o controlflow.o builtin.o \
+                varlib.o
+	cc -o smsh4 smsh4.o splitline.o execute2.o process2.o controlflow.o \
+                builtin.o varlib.o
+
+
